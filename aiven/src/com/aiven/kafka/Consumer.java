@@ -11,7 +11,7 @@ import org.apache.kafka.common.serialization.StringDeserializer;
 public final class Consumer {
     public static void main(String[] args) {
         String TOPIC_NAME = "farm_sensor";
-        String TRUSTSTORE_PASSWORD = "aiven123";
+        String TRUSTSTORE_PASSWORD = "";
 
         String sasl_username = "";
         String sasl_password = "";
