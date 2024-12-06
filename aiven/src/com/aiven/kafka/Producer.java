@@ -11,10 +11,10 @@ import com.aiven.datagen.FarmingConditionDataGenerator;
 public final class Producer {
     public static void main(String[] args) {
         String TOPIC_NAME = "farm_sensor";
-        String TRUSTSTORE_PASSWORD = "aiven123";
+        String TRUSTSTORE_PASSWORD = "";
 
-        String sasl_username = "avnadmin";
-        String sasl_password = "AVNS_L95N-k4Onl5YxyzXVVl";
+        String sasl_username = "";
+        String sasl_password = "";
         String jaasTemplate = "org.apache.kafka.common.security.scram.ScramLoginModule required username=\"%s\" password=\"%s\";";
         String jaasConfig = String.format(jaasTemplate, sasl_username, sasl_password);
 
