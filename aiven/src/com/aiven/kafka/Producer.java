@@ -19,13 +19,13 @@ public final class Producer {
         String jaasConfig = String.format(jaasTemplate, sasl_username, sasl_password);
 
         Properties properties = new Properties();
-        properties.setProperty("bootstrap.servers", "kafka-sensors-iot-farm.e.aivencloud.com:13912");
+        properties.setProperty("bootstrap.servers", "");
         properties.setProperty("security.protocol", "SASL_SSL");
         properties.setProperty("sasl.mechanism", "SCRAM-SHA-256");
         properties.setProperty("sasl.jaas.config", jaasConfig);
         properties.setProperty("ssl.endpoint.identification.algorithm", "");
         properties.setProperty("ssl.truststore.type", "jks");
-        properties.setProperty("ssl.truststore.location", "/Users/administrator/client.truststore.jks");
+        properties.setProperty("ssl.truststore.location", "");
         properties.setProperty("ssl.truststore.password", TRUSTSTORE_PASSWORD);
         properties.setProperty("key.serializer", StringSerializer.class.getName());
         properties.setProperty("value.serializer", StringSerializer.class.getName());
