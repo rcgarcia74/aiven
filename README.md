@@ -38,6 +38,25 @@ This will be a complete solution to push the events into Kafka with monitoring i
 
 ### Emit IoT event into Aiven for Apache Kafka
 #### Prerequisites
+In order for the Producer code in this project to be authenticated by Aiven using SASL, you need to create a Java security policy file. To simplify things, just grant all permission. See sample policy file below.
+``` shell
+grant
+{
+    permission java.security.AllPermission;
+};
+```
+When you execute Producer code, add the following flags to your vm arguments.
+
+```java
+-Djava.security.manager=allow
+-D-Djava.security.policy=/Users/administrator/Documents/Interviews/aiven/java.policy.aiven
+```
+Do not use Java 22. You will get the exception below. Use Java 11. You can try other versions but this project has been tested with Java 11.
+
+```shell
+java.lang.UnsupportedOperationException: getSubject is supported only if a security manager is allowed
+```
+
 You should have created your Aiven account [here](https://console.aiven.io/signup). Take note of the following information. For authentication, in this tutorial, we will use SASL.
 * SASL Username
 * SASL Password
