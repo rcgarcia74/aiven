@@ -70,9 +70,9 @@ This complete the Kafka setup.
 ### Integrate Aiven for Apache Flink
 Flink will be used to transform the events from farm_sensor topic then route them based on the value of **add_water** field which is a boolean. At this point, you should be familiar in creating services in Aiven. 
 1. Create Apache Flink service. Choose the same cloud, region as your Kafka service. Name your service.
-2. Once its created, click on Applications on the left panel then click **Create Application** ![Flink Applications](aiven/images/Flink_Create_Application.png)
+2. Once its created, click on Applications on the left panel then click **Create Application** ![Flink Applications](aiven/images/Flink_Create_Application.png). 
 3. Click on **Create first version** ![Create first version](aiven/images/Application_Create_First_Version.png)
-4. Add your source table ![Add Source Table](aiven/images/Applications_Add_First_Source_Table.png)
+4. Before you add your source table, make sure that you have integrated Kafka with your Flink service. Click on **Manage integrations** and choose your kafka service and click **Integrate** ![Manage integrations](aiven/images/Flink_Kafka_Service_Integration.png) Add your source table ![Add Source Table](aiven/images/Applications_Add_First_Source_Table.png)
 5. Choose your Kafka service and enter the SQL create statement ![New Source Table](aiven/images/Application_Add_New_Source_Table.png). For this table, use the [create-table-for-dry-soil.sql](aiven/flink/create-table-for-farm-sensor.sql) script. Click **Add Tabke**.
 6. Click **Next** to create Sink tables ![New Sink Table](aiven/images/Application_Sink_Table.png).
 7. Click **Add your first sink table** ![New Sink Table](aiven/images/Add_Your_First_Sink_Table.png).
