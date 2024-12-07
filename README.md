@@ -81,5 +81,6 @@ Flink will be used to transform the events from farm_sensor topic then route the
 10. You should see two sink tables named dry_soil & wet_soil ![Dry & Wet Soil](aiven/images/Two_Sink_Tables.png) Click **Next**.
 11. This is where you can do your transformation/filtering of events from **farm_sensor** topic. Copy/paste the statement from [farm_sensor_transform.sql](aiven/flink/farm_sensor_transform.sql) and add it to the create statement page. It does two things - transform **recordDate** field into a TIMESTAMP format so Flink can deserialize this column and filter the events based on add_water value. Click **Save and deploy later**.
 12. Your Flink job is not deployed yet. You will see something similar below. It shows the data pipeline created earlier. To deploy your pipeline, click **Create deployment** ![Create Deployment](aiven/images/Create_Deployment.png)
+13. Click **Deploy without a savepoint**
 
 Once your pipeline is running, you should be able to see events in dry_soil and wet_soil topics. 
